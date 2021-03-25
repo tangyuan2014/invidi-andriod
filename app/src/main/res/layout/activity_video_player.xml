@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="12"
+    android:orientation="vertical">
+
+    <com.shan.invidi.android.videoPlayer.CustomCompanionBannerView
+        android:id="@+id/companionTop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <RelativeLayout
+        android:id="@+id/playerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:layout_gravity="center_horizontal|bottom"
+        android:orientation="vertical" >
+        <FrameLayout
+            android:id="@+id/main_media_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/exoplayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:resize_mode="fill"/>
+        </FrameLayout>
+
+        <Button android:id="@+id/skipBtn"
+            android:text="@string/skip_ad_remaining_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:color="#66FF0000"
+            android:alpha="0.5"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:id="@+id/nextAdThumbnail"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone" />
+
+        <com.shan.invidi.android.videoPlayer.CustomImageView
+            android:id="@+id/pauseAdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:alpha="0.8"
+            android:background="#ffffff"
+            android:visibility="invisible"></com.shan.invidi.android.videoPlayer.CustomImageView>
+
+    </RelativeLayout>
+
+    <com.shan.invidi.android.videoPlayer.CustomCompanionBannerView
+        android:id="@+id/companionBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+</LinearLayout>
+
